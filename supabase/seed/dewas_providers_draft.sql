@@ -102,4 +102,68 @@ where not exists (
     and lower(coalesce(p.address, '')) = lower(coalesce('13 Rajaram Nagar, Mendki Road', ''))
 );
 
+insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
+select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Urvashi', null, (select id from public.specialties where slug = 'gynecologist'), null, null, 'Mp20221', 'Madhya Pradesh Medical Council', 'Adiyogi Multispeciality Hospital & Research Centre', '256/2/1 Lohar Pipliya, AB Road', 'Lohar Pipliya', 'Dewas', 'Madhya Pradesh', '455001', '+91 9926633336', null, null, null, 'https://www.eka.care/doctor/dr-urvashi-obstetrics-and-gynecologist-dewas', '2026-11-14'::date, 'Eka Care public doctor profile. Profile gives the clinic name and registration number only; the street address is borrowed from the hospital address on other listings (256/2/1 Lohar Pipliya, AB Road) and must be confirmed. Qualifications and experience not shown. Registration NOT yet checked against the council register.'
+where not exists (
+  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
+    and lower(p.name) = lower('Dr. Urvashi')
+    and lower(coalesce(p.address, '')) = lower(coalesce('256/2/1 Lohar Pipliya, AB Road', ''))
+);
+
+insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
+select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Shagufta Shaikh', null, (select id from public.specialties where slug = 'gynecologist'), null, null, null, null, 'Medicity Clinic', null, null, 'Dewas', 'Madhya Pradesh', '455001', null, null, null, null, 'https://www.eka.care/doctor/dr-drshagufta-shaikh-obstetrics_and_gynecologist-dewas', '2026-11-14'::date, 'Eka Care public doctor profile with limited details. Qualifications, experience, registration, street address and phone are not on the source - obtain them directly from the clinic before approving. Name appears on the source as "Dr. Drshagufta Shaikh"; confirm the correct spelling.'
+where not exists (
+  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
+    and lower(p.name) = lower('Dr. Shagufta Shaikh')
+    and lower(coalesce(p.address, '')) = lower(coalesce(null, ''))
+);
+
+insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
+select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Vimal Kumar Patidar', null, (select id from public.specialties where slug = 'radiologist'), null, null, null, null, 'Civil Hospital Dewas', null, null, 'Dewas', 'Madhya Pradesh', '455001', null, null, null, null, 'https://www.eka.care/doctor/dr-vimal-kumar-patidar-radiologist-dewas', '2026-11-14'::date, 'Eka Care public doctor profile with limited details. Qualifications, experience, registration, street address and phone are not on the source - obtain them directly from the clinic before approving. Source lists the specialty as Radiologist.'
+where not exists (
+  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
+    and lower(p.name) = lower('Dr. Vimal Kumar Patidar')
+    and lower(coalesce(p.address, '')) = lower(coalesce(null, ''))
+);
+
+insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
+select 'lab'::public.provider_type, 'draft'::public.listing_status, 'Metropolis Healthcare - Moti Bunglow, Dewas', null, null, null, null, null, null, null, 'No. 9, Moti Bunglow, near ICH', 'Moti Bunglow', 'Dewas', 'Madhya Pradesh', '455001', '08422801801', null, 'https://www.metropolisindia.com/', null, 'https://www.metropolisindia.com/lab/diagnostic-centre-in-moti-bunglow-near-ich-dewas-dewas', '2026-11-14'::date, 'LOW CONFIDENCE: details come from a search-result snippet of a third-party directory page that was not opened in full, so they are unconfirmed. Call the lab to confirm address, phone, timings and that it still operates before approving. The official Metropolis page blocked automated access (HTTP 403). The phone looks like a central booking line.'
+where not exists (
+  select 1 from public.providers p where p.type = 'lab'::public.provider_type
+    and lower(p.name) = lower('Metropolis Healthcare - Moti Bunglow, Dewas')
+    and lower(coalesce(p.address, '')) = lower(coalesce('No. 9, Moti Bunglow, near ICH', ''))
+);
+
+insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
+select 'lab'::public.provider_type, 'draft'::public.listing_status, 'Dewas Pathology, X-Ray & Sonography Centre', null, null, null, null, null, null, null, '162, Bhagat Singh Marg, Goya, Sabjimandi', 'Sabjimandi', 'Dewas', 'Madhya Pradesh', '455001', null, null, null, null, 'https://getvisitapp.com/labs/dewas/centers/dewas-pathology-x-ray-sonography-centre/', '2026-11-14'::date, 'Two directories give different phone numbers for this address, so the phone is left N/A. Third-party listings only; confirm address, phone and timings directly before approving.'
+where not exists (
+  select 1 from public.providers p where p.type = 'lab'::public.provider_type
+    and lower(p.name) = lower('Dewas Pathology, X-Ray & Sonography Centre')
+    and lower(coalesce(p.address, '')) = lower(coalesce('162, Bhagat Singh Marg, Goya, Sabjimandi', ''))
+);
+
+insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
+select 'lab'::public.provider_type, 'draft'::public.listing_status, 'Dewas Diagnostic and CT Scan Center', null, null, null, null, null, null, null, 'Vinayak Hospital, 106, Mendki Road, Civil Lines Road, Itawa', 'Itawa', 'Dewas', 'Madhya Pradesh', '455001', '072722 54637', null, null, null, 'https://www.mediyaar.com/dewas/labs/dewas-diagnostic-and-ct-scan-center-itawa.html', '2026-11-14'::date, 'LOW CONFIDENCE: details come from a search-result snippet of a third-party directory page that was not opened in full, so they are unconfirmed. Call the lab to confirm address, phone, timings and that it still operates before approving.'
+where not exists (
+  select 1 from public.providers p where p.type = 'lab'::public.provider_type
+    and lower(p.name) = lower('Dewas Diagnostic and CT Scan Center')
+    and lower(coalesce(p.address, '')) = lower(coalesce('Vinayak Hospital, 106, Mendki Road, Civil Lines Road, Itawa', ''))
+);
+
+insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
+select 'lab'::public.provider_type, 'draft'::public.listing_status, 'Medicare Pathology and Laboratory Centre', null, null, null, null, null, null, null, 'Moti Bunglow Main Road, Shivaji Nagar', 'Moti Bunglow', 'Dewas', 'Madhya Pradesh', '455001', '096307 27704', null, null, null, 'https://www.mediyaar.com/dewas/labs/medicare-pathology-and-laboratory-centre-moti-bunglow.html', '2026-11-14'::date, 'LOW CONFIDENCE: details come from a search-result snippet of a third-party directory page that was not opened in full, so they are unconfirmed. Call the lab to confirm address, phone, timings and that it still operates before approving.'
+where not exists (
+  select 1 from public.providers p where p.type = 'lab'::public.provider_type
+    and lower(p.name) = lower('Medicare Pathology and Laboratory Centre')
+    and lower(coalesce(p.address, '')) = lower(coalesce('Moti Bunglow Main Road, Shivaji Nagar', ''))
+);
+
+insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
+select 'lab'::public.provider_type, 'draft'::public.listing_status, 'Bishwas Pathology Laboratory', null, null, null, null, null, null, null, '21 Pradhikaran Market, AB Road', 'Tekri', 'Dewas', 'Madhya Pradesh', '455001', null, null, null, null, 'https://www.mediyaar.com/dewas/labs/bishwas-pathology-laboratory-tekri-area.html', '2026-11-14'::date, 'LOW CONFIDENCE: details come from a search-result snippet of a third-party directory page that was not opened in full, so they are unconfirmed. Call the lab to confirm address, phone, timings and that it still operates before approving. No phone number on the listing.'
+where not exists (
+  select 1 from public.providers p where p.type = 'lab'::public.provider_type
+    and lower(p.name) = lower('Bishwas Pathology Laboratory')
+    and lower(coalesce(p.address, '')) = lower(coalesce('21 Pradhikaran Market, AB Road', ''))
+);
+
 commit;

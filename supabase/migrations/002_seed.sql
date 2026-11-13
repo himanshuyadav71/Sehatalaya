@@ -26,6 +26,7 @@ insert into public.specialties (slug, name_en, name_hi, organ_key, sort_order) v
   ('psychiatrist',       'Psychiatrist',                         'मनोरोग विशेषज्ञ',                  'mental',   180),
   ('endocrinologist',    'Endocrinologist (Diabetes & Thyroid)', 'मधुमेह एवं थायरॉइड विशेषज्ञ',      'hormones', 190),
   ('oncologist',         'Oncologist',                           'कैंसर रोग विशेषज्ञ',               'cancer',   200),
+  ('radiologist',       'Radiologist',                          'रेडियोलॉजिस्ट',                    'general',  205),
   ('ayurveda',           'Ayurveda Practitioner',                'आयुर्वेद चिकित्सक',                'general',  210),
   ('homeopathy',         'Homoeopathy Practitioner',             'होम्योपैथी चिकित्सक',              'general',  220)
 on conflict (slug) do nothing;
