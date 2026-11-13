@@ -1,5 +1,5 @@
 -- =====================================================================
--- Sehatalaya — reference data (specialties + default settings).
+-- Sehatalay — reference data (specialties + default settings).
 -- Contains NO provider records. Providers are added only by the owner,
 -- as drafts, through the admin dashboard or the CSV importer.
 -- =====================================================================

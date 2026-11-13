@@ -1,4 +1,4 @@
-# Sehatalaya (सेहतालय) — Sehat Ka Ghar
+# Sehatalay (सेहतालय) — Sehat Ka Ghar
 
 A free, neutral directory of doctors, diagnostic labs and pharmacies for **Dewas, Madhya
 Pradesh**, in Hindi and English.
@@ -52,7 +52,7 @@ npm run dev                  # http://localhost:5173
 
 ```bash
 git add .
-git commit -m "Sehatalaya v1"
+git commit -m "Sehatalay v1"
 git branch -M main
 git remote add origin https://github.com/himanshuyadav71/sehatalaya.git
 git push -u origin main

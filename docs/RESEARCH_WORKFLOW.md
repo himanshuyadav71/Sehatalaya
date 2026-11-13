@@ -1,6 +1,6 @@
 # Provider research workflow
 
-How real doctors, labs and pharmacies get into Sehatalaya. The short version:
+How real doctors, labs and pharmacies get into Sehatalay. The short version:
 **research → draft CSV → import as drafts → owner checks each record → owner approves.**
 Nothing reaches the public site without the owner's approval.
 

@@ -2,7 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
 
 const STRINGS = {
   en: {
-    brand: 'Sehatalaya',
+    brand: 'Sehatalay',
     tagline: 'Sehat Ka Ghar',
     city: 'Dewas, Madhya Pradesh',
     na: 'N/A',
@@ -30,7 +30,7 @@ const STRINGS = {
     'home.doctorsDesc': 'Doctors and clinics, by specialty and area',
     'home.labsDesc': 'Diagnostic and pathology laboratories',
     'home.pharmaciesDesc': 'Medical stores and pharmacies',
-    'home.principles': 'How Sehatalaya works',
+    'home.principles': 'How Sehatalay works',
     'home.p1.title': 'Reviewed before publishing',
     'home.p1.body':
       'Listings are researched from public sources and approved by the owner before they appear. Unconfirmed details are shown as N/A.',
@@ -67,7 +67,7 @@ const STRINGS = {
     'dir.emptyFiltered.title': 'No listings match your search',
     'dir.emptyFiltered.body': 'Try a different name, area or filter.',
     'dir.neutral':
-      'Listings are shown in alphabetical order. Sehatalaya does not rank providers and does not accept payment for placement.',
+      'Listings are shown in alphabetical order. Sehatalay does not rank providers and does not accept payment for placement.',
     'dir.error': 'Listings could not be loaded. Please try again.',
     'dir.loading': 'Loading listings…',
 
@@ -78,7 +78,7 @@ const STRINGS = {
 
     'card.view': 'View details',
     'card.verified': 'Verified',
-    'card.verifiedTitle': 'Registration details checked by Sehatalaya',
+    'card.verifiedTitle': 'Registration details checked by Sehatalay',
     'card.experience': '{n} years experience',
 
     'field.specialty': 'Specialty',
@@ -106,7 +106,7 @@ const STRINGS = {
     'detail.details': 'Details',
     'detail.location': 'Location',
     'detail.disclaimer':
-      'Information is compiled from public sources and provider confirmation. Please confirm timings and availability directly with the provider. Sehatalaya does not provide medical advice.',
+      'Information is compiled from public sources and provider confirmation. Please confirm timings and availability directly with the provider. Sehatalay does not provide medical advice.',
     'detail.report': 'See something incorrect? Tell us so we can fix it.',
 
     'action.chat': 'Chat',
@@ -121,10 +121,10 @@ const STRINGS = {
     'modal.call.body':
       'In-app calling is not available yet. If a verified contact number is available for this provider, it is shown on the listing.',
 
-    'about.title': 'About Sehatalaya',
-    'about.meaning': 'Sehatalaya (सेहतालय) means "Sehat Ka Ghar" — the home of health.',
+    'about.title': 'About Sehatalay',
+    'about.meaning': 'Sehatalay (सेहतालय) means "Sehat Ka Ghar" — the home of health.',
     'about.body1':
-      'Sehatalaya is a free healthcare directory that starts with Dewas, Madhya Pradesh. It helps residents find doctors, diagnostic laboratories and pharmacies near them, in Hindi and English.',
+      'Sehatalay is a free healthcare directory that starts with Dewas, Madhya Pradesh. It helps residents find doctors, diagnostic laboratories and pharmacies near them, in Hindi and English.',
     'about.body2':
       'Listings are researched from publicly available, permitted sources such as official websites and registration directories, and from direct confirmation by the provider. Nothing is published automatically: every listing is reviewed and approved by the owner first.',
     'about.body3':
@@ -136,15 +136,15 @@ const STRINGS = {
     'about.contactNone': 'Contact details will be published here soon.',
     'about.disclaimerTitle': 'Medical disclaimer',
     'about.disclaimerBody':
-      'Sehatalaya is an information directory, not a medical service. It does not provide medical advice, diagnosis or treatment, and does not recommend or endorse any provider. In an emergency, call 108 or go to the nearest hospital.',
+      'Sehatalay is an information directory, not a medical service. It does not provide medical advice, diagnosis or treatment, and does not recommend or endorse any provider. In an emergency, call 108 or go to the nearest hospital.',
     'about.privacyTitle': 'Privacy',
     'about.privacyBody':
-      'Visitors do not need an account to use Sehatalaya, and we do not collect personal health information. Your language preference is stored only in your own browser.',
+      'Visitors do not need an account to use Sehatalay, and we do not collect personal health information. Your language preference is stored only in your own browser.',
 
     'footer.disclaimer':
-      'Sehatalaya is an information directory and does not provide medical advice. In an emergency, call 108.',
+      'Sehatalay is an information directory and does not provide medical advice. In an emergency, call 108.',
     'footer.free': 'All provider listings are free.',
-    'footer.rights': 'Sehatalaya — Sehat Ka Ghar',
+    'footer.rights': 'Sehatalay — Sehat Ka Ghar',
 
     'setup.title': 'Website setup is not complete',
     'setup.body':

@@ -9,7 +9,7 @@ export default function AdminLayout() {
   const { isOwner, loading, session, signOut } = useAuth();
 
   useEffect(() => {
-    document.title = 'Admin — Sehatalaya';
+    document.title = 'Admin — Sehatalay';
     const meta = document.createElement('meta');
     meta.name = 'robots';
     meta.content = 'noindex, nofollow';
@@ -31,7 +31,7 @@ export default function AdminLayout() {
       <header className="admin-header">
         <div className="container admin-header-inner">
           <Link to="/admin" className="admin-brand">
-            Sehatalaya Admin
+            Sehatalay Admin
           </Link>
           <nav className="admin-nav" aria-label="Admin">
             <NavLink to="/admin" end>

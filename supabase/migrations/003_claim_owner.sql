@@ -1,5 +1,5 @@
 -- =====================================================================
--- Sehatalaya — register the site owner (run ONCE, from the SQL Editor).
+-- Sehatalay — register the site owner (run ONCE, from the SQL Editor).
 --
 -- Before running:
 --   1. Supabase → Authentication → Users → "Add user" → create the user

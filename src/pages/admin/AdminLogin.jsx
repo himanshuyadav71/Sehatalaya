@@ -13,7 +13,7 @@ export default function AdminLogin() {
   const [busy, setBusy] = useState(false);
 
   useEffect(() => {
-    document.title = 'Owner sign in — Sehatalaya';
+    document.title = 'Owner sign in — Sehatalay';
   }, []);
 
   if (!loading && isOwner) return <Navigate to="/admin" replace />;
@@ -32,7 +32,7 @@ export default function AdminLogin() {
       <form className="card login-card" onSubmit={submit}>
         <h1 className="page-title">Owner sign in</h1>
         <p className="muted">
-          This area is restricted to the Sehatalaya owner. Access is verified by the database on
+          This area is restricted to the Sehatalay owner. Access is verified by the database on
           every request.
         </p>
 

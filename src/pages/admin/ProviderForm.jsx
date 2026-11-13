@@ -439,7 +439,7 @@ export default function ProviderForm() {
         </label>
         <p className="muted small">
           Paste only the link to the Maps listing. Do not copy reviews, ratings, photos or other
-          business data from Google Maps into Sehatalaya.
+          business data from Google Maps into Sehatalay.
         </p>
       </fieldset>
 
@@ -482,7 +482,7 @@ export default function ProviderForm() {
               onChange={(e) => setPhotoConfirm(e.target.checked)}
             />
             <span>
-              I confirm the provider (or the copyright holder) has authorised Sehatalaya to publish
+              I confirm the provider (or the copyright holder) has authorised Sehatalay to publish
               this photo. It was not taken from Google Maps or another website without permission.
             </span>
           </label>

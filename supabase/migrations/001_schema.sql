@@ -1,5 +1,5 @@
 -- =====================================================================
--- Sehatalaya (सेहतालय) — database schema, permissions and storage
+-- Sehatalay (सेहतालय) — database schema, permissions and storage
 -- Run once in Supabase → SQL Editor (or `supabase db push`).
 -- Safe to re-run: objects are created with IF NOT EXISTS / OR REPLACE.
 -- =====================================================================

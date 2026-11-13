@@ -45,7 +45,7 @@ export default function Layout() {
 
       <header className="site-header">
         <div className="container header-inner">
-          <Link to="/" className="brand" aria-label="Sehatalaya — home">
+          <Link to="/" className="brand" aria-label="Sehatalay — home">
             <Logo />
             <span className="brand-text">
               <span className="brand-name">{t('brand')}</span>
