@@ -151,11 +151,18 @@ export default function ProviderDetail() {
         <section className="card">
           <h2 className="section-title">{t('detail.contact')}</h2>
           <dl className="detail-list">
-            <Row label={t('field.verifiedPhone')}>
-              {p.verified_phone ? (
-                <a className="phone-link" href={telHref(p.verified_phone)}>
-                  {p.verified_phone}
-                </a>
+            <Row label={t(p.phone_verified ? 'field.verifiedPhone' : 'field.phoneUnverified')}>
+              {p.phone ? (
+                <>
+                  <a className="phone-link" href={telHref(p.phone)}>
+                    {p.phone}
+                  </a>
+                  {p.phone_verified ? (
+                    <span className="badge badge-verified">{t('card.verified')}</span>
+                  ) : (
+                    <div className="muted small">{t('field.phoneUnverifiedNote')}</div>
+                  )}
+                </>
               ) : null}
             </Row>
             <Row label={t('field.address')}>{fullAddress}</Row>

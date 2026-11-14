@@ -51,15 +51,18 @@ export default function ProviderCard({ provider }) {
         </p>
 
         <p className="provider-line">
-          {p.verified_phone ? (
+          {p.phone ? (
             <>
-              <span className="muted">{t('field.verifiedPhone')}: </span>
-              <a className="strong" href={telHref(p.verified_phone)}>
-                {p.verified_phone}
+              <span className="muted">
+                {t(p.phone_verified ? 'field.verifiedPhone' : 'field.phoneUnverified')}:{' '}
+              </span>
+              <a className="strong" href={telHref(p.phone)}>
+                {p.phone}
               </a>
+              {p.phone_verified ? <span className="badge badge-verified">✓</span> : null}
             </>
           ) : (
-            <span className="muted">{t('field.phoneUnverified')}</span>
+            <span className="muted">{t('field.phoneNone')}</span>
           )}
         </p>
       </div>

@@ -16,7 +16,7 @@ Pradesh**, in Hindi and English.
 | Sorting | Alphabetical only (name or area). No ratings, reviews, "top doctors" or paid placement |
 | Labs and pharmacies | Same directory with search and area filter |
 | Chat button | Opens a modal: "Messaging — Coming Soon" / "चैट सुविधा — जल्द आ रही है". No messaging |
-| Call button | Opens a modal: "Voice Connect — In Development". No in-app calling. Verified numbers are shown separately on the listing |
+| Call button | Opens a modal: "Voice Connect — In Development". No in-app calling. The contact number is shown on the listing, labelled "verified" or "not yet verified" |
 | Missing data | Shown as "N/A"; neutral placeholder instead of a photo |
 | Admin dashboard | `/admin` — add / edit / remove providers, approve drafts, upload authorised photos, manage specialties, verify information, website settings, CSV import |
 | Publishing | Every record starts as a draft. Only the owner's approval publishes it |

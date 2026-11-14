@@ -262,6 +262,8 @@ select
   p.city,
   p.state,
   p.pincode,
+  p.phone,
+  p.phone_verified,
   case when p.phone_verified then p.phone end as verified_phone,
   p.maps_url,
   p.website_url,

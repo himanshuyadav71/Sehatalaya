@@ -433,8 +433,8 @@ export default function ProviderForm() {
             onChange={set('phone_verified')}
           />
           <span>
-            Contact number verified (confirmed with the provider or their official website). Only
-            verified numbers are shown publicly.
+            Contact number verified (confirmed with the provider or their official website).
+            Unverified numbers are still shown publicly, labelled "not yet verified".
           </span>
         </label>
         <p className="muted small">
