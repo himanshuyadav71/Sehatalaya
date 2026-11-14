@@ -39,14 +39,6 @@ where not exists (
 );
 
 insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Prateek Shrivastava', null, (select id from public.specialties where slug = 'dentist'), 'BDS', 17, 'A-1661', null, 'Dental Solutions', '1, Surana Complex, AB Road, near Canara Bank, opposite Patwardhan Petrol Pump, Shivaji Nagar, Moti Bungalow', 'Shivaji Nagar', 'Dewas', 'Madhya Pradesh', '455001', null, null, null, null, 'https://www.eka.care/doctor/dr-prateek-shrivastava-dental-surgeon-dewas', '2026-11-13'::date, 'Eka Care public doctor profile. Source shows the council as "dental council of india, 2008"; confirm which dental council issued A-1661 before recording it. No phone number on the source. Registration NOT yet checked against the council register.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Prateek Shrivastava')
-    and lower(coalesce(p.address, '')) = lower(coalesce('1, Surana Complex, AB Road, near Canara Bank, opposite Patwardhan Petrol Pump, Shivaji Nagar, Moti Bungalow', ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
 select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Ashwin Singh Songara', null, (select id from public.specialties where slug = 'pulmonologist'), 'MBBS, MD (Pulmonary Medicine), CCIDC, PGCDM', null, 'MP 14769', 'Madhya Pradesh Medical Council', 'Adiyogi Multispeciality Hospital & Research Centre', '256/2/1 Lohar Pipliya, AB Road', 'Lohar Pipliya', 'Dewas', 'Madhya Pradesh', '455001', '+91 9826888825', null, null, null, 'https://www.eka.care/doctor/ashwin-singh-songara-pulmonologist-dewas', '2026-11-13'::date, 'Eka Care public doctor profile. Experience left N/A because the source is inconsistent (shows "9 yrs" and "more than 6 years"). Source also lists a second clinic: Songara Chest & Allergy Clinic, Kela Devi Chouraha, AB Road. Registration number NOT yet checked against the council register. Phone not yet confirmed with the provider.'
 where not exists (
   select 1 from public.providers p where p.type = 'doctor'::public.provider_type
@@ -60,22 +52,6 @@ where not exists (
   select 1 from public.providers p where p.type = 'doctor'::public.provider_type
     and lower(p.name) = lower('Dr. Sandeep Thakur')
     and lower(coalesce(p.address, '')) = lower(coalesce('256/2/1 Lohar Pipliya, AB Road', ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Ashutosh Singh Bhatele', null, (select id from public.specialties where slug = 'psychiatrist'), null, null, null, null, 'Neurocare Mind Wellness EEG Centre', null, null, 'Dewas', 'Madhya Pradesh', '455001', null, null, null, null, 'https://www.eka.care/doctor/dr-ashutosh-singh-bhatele-psychiatrist-dewas', '2026-11-13'::date, 'Eka Care public doctor profile with name, specialty and clinic name only. Qualifications, experience, registration, street address and phone are not on the source - obtain them directly from the clinic before approving.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Ashutosh Singh Bhatele')
-    and lower(coalesce(p.address, '')) = lower(coalesce(null, ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Sanjeev Kumar Sharma', null, (select id from public.specialties where slug = 'general-physician'), null, null, null, null, 'Shiv Veda', null, null, 'Dewas', 'Madhya Pradesh', '455001', null, null, null, null, 'https://www.eka.care/doctor/dr-sanjeev-kumar-sharma-general_physician-dewas', '2026-11-13'::date, 'Eka Care public doctor profile with name, specialty and clinic name only. Qualifications, experience, registration, street address and phone are not on the source - obtain them directly from the clinic before approving.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Sanjeev Kumar Sharma')
-    and lower(coalesce(p.address, '')) = lower(coalesce(null, ''))
 );
 
 insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
@@ -111,35 +87,11 @@ where not exists (
 );
 
 insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Shagufta Shaikh', null, (select id from public.specialties where slug = 'gynecologist'), null, null, null, null, 'Medicity Clinic', null, null, 'Dewas', 'Madhya Pradesh', '455001', null, null, null, null, 'https://www.eka.care/doctor/dr-drshagufta-shaikh-obstetrics_and_gynecologist-dewas', '2026-11-14'::date, 'Eka Care public doctor profile with limited details. Qualifications, experience, registration, street address and phone are not on the source - obtain them directly from the clinic before approving. Name appears on the source as "Dr. Drshagufta Shaikh"; confirm the correct spelling.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Shagufta Shaikh')
-    and lower(coalesce(p.address, '')) = lower(coalesce(null, ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Vimal Kumar Patidar', null, (select id from public.specialties where slug = 'radiologist'), null, null, null, null, 'Civil Hospital Dewas', null, null, 'Dewas', 'Madhya Pradesh', '455001', null, null, null, null, 'https://www.eka.care/doctor/dr-vimal-kumar-patidar-radiologist-dewas', '2026-11-14'::date, 'Eka Care public doctor profile with limited details. Qualifications, experience, registration, street address and phone are not on the source - obtain them directly from the clinic before approving. Source lists the specialty as Radiologist.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Vimal Kumar Patidar')
-    and lower(coalesce(p.address, '')) = lower(coalesce(null, ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
 select 'lab'::public.provider_type, 'draft'::public.listing_status, 'Metropolis Healthcare - Moti Bunglow, Dewas', null, null, null, null, null, null, null, 'No. 9, Moti Bunglow, near ICH', 'Moti Bunglow', 'Dewas', 'Madhya Pradesh', '455001', '08422801801', null, 'https://www.metropolisindia.com/', null, 'https://www.metropolisindia.com/lab/diagnostic-centre-in-moti-bunglow-near-ich-dewas-dewas', '2026-11-14'::date, 'LOW CONFIDENCE: details come from a search-result snippet of a third-party directory page that was not opened in full, so they are unconfirmed. Call the lab to confirm address, phone, timings and that it still operates before approving. The official Metropolis page blocked automated access (HTTP 403). The phone looks like a central booking line.'
 where not exists (
   select 1 from public.providers p where p.type = 'lab'::public.provider_type
     and lower(p.name) = lower('Metropolis Healthcare - Moti Bunglow, Dewas')
     and lower(coalesce(p.address, '')) = lower(coalesce('No. 9, Moti Bunglow, near ICH', ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'lab'::public.provider_type, 'draft'::public.listing_status, 'Dewas Pathology, X-Ray & Sonography Centre', null, null, null, null, null, null, null, '162, Bhagat Singh Marg, Goya, Sabjimandi', 'Sabjimandi', 'Dewas', 'Madhya Pradesh', '455001', null, null, null, null, 'https://getvisitapp.com/labs/dewas/centers/dewas-pathology-x-ray-sonography-centre/', '2026-11-14'::date, 'Two directories give different phone numbers for this address, so the phone is left N/A. Third-party listings only; confirm address, phone and timings directly before approving.'
-where not exists (
-  select 1 from public.providers p where p.type = 'lab'::public.provider_type
-    and lower(p.name) = lower('Dewas Pathology, X-Ray & Sonography Centre')
-    and lower(coalesce(p.address, '')) = lower(coalesce('162, Bhagat Singh Marg, Goya, Sabjimandi', ''))
 );
 
 insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
@@ -167,147 +119,11 @@ where not exists (
 );
 
 insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Sandeep Jatwa', null, (select id from public.specialties where slug = 'general-physician'), 'MBBS', 14, 'MP 12928', 'Madhya Pradesh Medical Council', 'Dr Sandeep Jatwa Clinic', '63 Ravi Shankar Nagar', 'Ravi Shankar Nagar', 'Dewas', 'Madhya Pradesh', '455001', null, null, null, 'Mon-Sat 8:30-11:00 am, 1:00-3:30 pm', 'https://www.practo.com/dewas/doctor/sandeep-jatwa-general-practitioner', '2026-11-14'::date, 'Practo public doctor profile. Registration number is as shown there and NOT yet checked against the council register. Practo hides the phone behind a button, so phone is N/A: get it from the clinic. Experience is as stated on the date checked. Source shows experience as both 14 and 9 years.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Sandeep Jatwa')
-    and lower(coalesce(p.address, '')) = lower(coalesce('63 Ravi Shankar Nagar', ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Lokendra Nagar', null, (select id from public.specialties where slug = 'general-physician'), 'MBBS', 4, 'MP 35743', 'Madhya Pradesh Medical Council', 'Airavat Clinic', 'New Dewas Main Gate, near DMart', 'Radhaganj', 'Dewas', 'Madhya Pradesh', '455001', null, null, null, 'Mon-Sun 9:00-11:00 am, 5:00-10:00 pm', 'https://www.practo.com/dewas/doctor/lokendra-nagar-general-physician', '2026-11-14'::date, 'Practo public doctor profile. Registration number is as shown there and NOT yet checked against the council register. Practo hides the phone behind a button, so phone is N/A: get it from the clinic. Experience is as stated on the date checked.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Lokendra Nagar')
-    and lower(coalesce(p.address, '')) = lower(coalesce('New Dewas Main Gate, near DMart', ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
 select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Puneet Maheshwari', null, (select id from public.specialties where slug = 'orthopedic'), 'MBBS, MS (Orthopaedics)', 14, '10877', 'Madhya Pradesh Medical Council', 'Maheshwari Hospital', '163, Bhagat Singh Marg, opposite Nagar Nigam', 'Bada Bazar', 'Dewas', 'Madhya Pradesh', '455001', '07828 485666', null, null, 'Mon-Sat 10:00 am-1:00 pm, 6:00-8:00 pm', 'https://www.practo.com/dewas/doctor/puneet-maheshwari-orthopedist', '2026-11-14'::date, 'Practo public doctor profile. Registration number is as shown there and NOT yet checked against the council register. Practo hides the phone behind a button, so phone is N/A: get it from the clinic. Experience is as stated on the date checked. Phone added 2026-11-14 from Bajaj Finserv Health and the Zurich Kotak cashless-hospital list (both list it as "Maheshwari Nursing Home", 163 Bhagat Singh Marg); not yet confirmed by call.'
 where not exists (
   select 1 from public.providers p where p.type = 'doctor'::public.provider_type
     and lower(p.name) = lower('Dr. Puneet Maheshwari')
     and lower(coalesce(p.address, '')) = lower(coalesce('163, Bhagat Singh Marg, opposite Nagar Nigam', ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Surya Pratap Singh Chauhan', null, (select id from public.specialties where slug = 'general-physician'), 'MBBS', 10, 'MP 20759', 'Madhya Pradesh Medical Council', 'Dewas Neuro-Psychiatry Center', null, 'Industrial Estate', 'Dewas', 'Madhya Pradesh', '455001', null, null, null, 'Mon-Sat 4:30-8:00 pm', 'https://www.practo.com/dewas/doctor/surya-pratap-singh-chauhan-psychiatrist', '2026-11-14'::date, 'Practo public doctor profile. Registration number is as shown there and NOT yet checked against the council register. Practo hides the phone behind a button, so phone is N/A: get it from the clinic. Experience is as stated on the date checked. Street address not shown. Practo lists Psychiatrist as an unverified second specialty.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Surya Pratap Singh Chauhan')
-    and lower(coalesce(p.address, '')) = lower(coalesce(null, ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Ravi Mohan Patel', null, (select id from public.specialties where slug = 'general-physician'), 'MD (Medicine, Philippines; MBBS-equivalent)', 6, 'MP-29956', 'Madhya Pradesh Medical Council', 'SKS Clinic', 'Kaila Devi Road, Mishrilal Nagar', 'Mishrilal Nagar', 'Dewas', 'Madhya Pradesh', '455001', null, null, null, 'Mon-Fri 10 am-4 pm, 5-9 pm; Sat 10-5, 6-9; Sun 10-5', 'https://www.practo.com/dewas/doctor/dr-ravi-mohan-patel-general-physician', '2026-11-14'::date, 'Practo public doctor profile. Registration number is as shown there and NOT yet checked against the council register. Practo hides the phone behind a button, so phone is N/A: get it from the clinic. Experience is as stated on the date checked.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Ravi Mohan Patel')
-    and lower(coalesce(p.address, '')) = lower(coalesce('Kaila Devi Road, Mishrilal Nagar', ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Aman Nagar', null, (select id from public.specialties where slug = 'general-physician'), 'MBBS', 2, 'MP-46092', 'Madhya Pradesh Medical Council', 'Nagar Multispeciality Center', 'Main Road, Barotha', 'Barotha', 'Dewas', 'Madhya Pradesh', null, null, null, null, 'Mon-Sun 9 am-9 pm', 'https://www.practo.com/dewas/doctor/dr-aman-nagar-general-physician', '2026-11-14'::date, 'Practo public doctor profile. Registration number is as shown there and NOT yet checked against the council register. Practo hides the phone behind a button, so phone is N/A: get it from the clinic. Experience is as stated on the date checked. Barotha is in Dewas district, outside the city; PIN not shown.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Aman Nagar')
-    and lower(coalesce(p.address, '')) = lower(coalesce('Main Road, Barotha', ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Rahul Dhakad', null, (select id from public.specialties where slug = 'general-physician'), 'MBBS', 7, 'MP-25928', 'Madhya Pradesh Medical Council', 'Dr Rahul Dhakad''s Orthopedic Clinic', null, 'Bangar', 'Dewas', 'Madhya Pradesh', null, null, null, null, 'Mon-Sun 8:00-11:30 am', 'https://www.practo.com/dewas/doctor/dr-rahul-dhakad-general-physician', '2026-11-14'::date, 'Practo public doctor profile. Registration number is as shown there and NOT yet checked against the council register. Practo hides the phone behind a button, so phone is N/A: get it from the clinic. Experience is as stated on the date checked. No street address shown. Practo marks Orthopaedic surgeon as unverified, so listed as General Physician.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Rahul Dhakad')
-    and lower(coalesce(p.address, '')) = lower(coalesce(null, ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Hitendra Kachhwahe', null, (select id from public.specialties where slug = 'general-physician'), 'MBBS', 4, 'MP-35159', 'Madhya Pradesh Medical Council', 'Shri Krishnayan Hospital', null, 'Double Chowki', 'Dewas', 'Madhya Pradesh', null, null, null, null, 'Mon-Sun 12-5 pm, 6-9 pm', 'https://www.practo.com/dewas/doctor/dr-hitendra-kachhwahe-general-physician', '2026-11-14'::date, 'Practo public doctor profile. Registration number is as shown there and NOT yet checked against the council register. Practo hides the phone behind a button, so phone is N/A: get it from the clinic. Experience is as stated on the date checked. Double Chowki is in Dewas district, outside the city; no street address shown.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Hitendra Kachhwahe')
-    and lower(coalesce(p.address, '')) = lower(coalesce(null, ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Vishnu Prasad Malviya', null, (select id from public.specialties where slug = 'general-physician'), 'MBBS', 4, 'MP 39306', 'Madhya Pradesh Medical Council', 'City Care Hospital', 'Neori Road, Kathed', 'Hatpipliya', 'Dewas', 'Madhya Pradesh', null, null, null, null, 'Mon-Sat 8:00-11:30 am, 12:30-9:00 pm', 'https://www.practo.com/dewas/doctor/vishnu-prasad-malviya-general-physician', '2026-11-14'::date, 'Practo public doctor profile. Registration number is as shown there and NOT yet checked against the council register. Practo hides the phone behind a button, so phone is N/A: get it from the clinic. Experience is as stated on the date checked. Hatpipliya is in Dewas district, outside the city.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Vishnu Prasad Malviya')
-    and lower(coalesce(p.address, '')) = lower(coalesce('Neori Road, Kathed', ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Rajat Singh Bhondiya', null, (select id from public.specialties where slug = 'general-physician'), 'MBBS', 5, 'MP-32398', 'Madhya Pradesh Medical Council', 'Niharika Clinic', '40 Gharghes Greens', 'Radhaganj', 'Dewas', 'Madhya Pradesh', '455001', null, null, null, 'Mon-Sat 5:00-9:00 pm', 'https://www.practo.com/dewas/doctor/rajat-singh-5', '2026-11-14'::date, 'Practo public doctor profile. Registration number is as shown there and NOT yet checked against the council register. Practo hides the phone behind a button, so phone is N/A: get it from the clinic. Experience is as stated on the date checked.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Rajat Singh Bhondiya')
-    and lower(coalesce(p.address, '')) = lower(coalesce('40 Gharghes Greens', ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Nilesha Varandani', null, (select id from public.specialties where slug = 'pediatrician'), 'MBBS, DCH', 23, 'MP-5978', 'Madhya Pradesh Medical Council', 'Krishna Clinic', '38 A, Yamuna Nagar, AB Road, near Kaila Devi Mandir Square', 'Yamuna Nagar', 'Dewas', 'Madhya Pradesh', '455001', null, null, null, 'Mon-Sat 6:00-10:00 pm', 'https://www.practo.com/dewas/doctor/nilesha-varandani-pediatrician', '2026-11-14'::date, 'Practo public doctor profile. Registration number is as shown there and NOT yet checked against the council register. Practo hides the phone behind a button, so phone is N/A: get it from the clinic. Experience is as stated on the date checked.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Nilesha Varandani')
-    and lower(coalesce(p.address, '')) = lower(coalesce('38 A, Yamuna Nagar, AB Road, near Kaila Devi Mandir Square', ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Archana Dhanke', null, (select id from public.specialties where slug = 'dentist'), 'BDS', 12, 'A-24734', 'Maharashtra State Dental Council', 'Saanvi Dental Clinic', '62, Shivaji Nagar, near Income Tax Office', 'Shivaji Nagar', 'Dewas', 'Madhya Pradesh', '455001', null, null, null, 'Mon-Sun 10 am-2 pm, 4-8 pm', 'https://www.practo.com/dewas/doctor/archana-dhanke-dentist', '2026-11-14'::date, 'Practo public doctor profile. Registration number is as shown there and NOT yet checked against the council register. Practo hides the phone behind a button, so phone is N/A: get it from the clinic. Experience is as stated on the date checked.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Archana Dhanke')
-    and lower(coalesce(p.address, '')) = lower(coalesce('62, Shivaji Nagar, near Income Tax Office', ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Rahul Rathore', null, (select id from public.specialties where slug = 'dentist'), 'BDS', 14, 'A-3814', 'Madhya Pradesh State Dental Council', 'Krishna Clinic', '38 A, Yamuna Nagar, AB Road, near Kaila Devi Mandir Square', 'Yamuna Nagar', 'Dewas', 'Madhya Pradesh', '455001', null, null, null, 'Mon-Sat 5:00-9:00 pm', 'https://www.practo.com/dewas/doctor/dr-rahul-rathore-dentist', '2026-11-14'::date, 'Practo public doctor profile. Registration number is as shown there and NOT yet checked against the council register. Practo hides the phone behind a button, so phone is N/A: get it from the clinic. Experience is as stated on the date checked.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Rahul Rathore')
-    and lower(coalesce(p.address, '')) = lower(coalesce('38 A, Yamuna Nagar, AB Road, near Kaila Devi Mandir Square', ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Tariq Ahmed Shaikh', null, (select id from public.specialties where slug = 'internal-medicine'), 'MD (General Medicine)', 21, '47451', 'Medical Council of India', 'First Choice Clinic', '143 Karmachari Colony', 'Karmachari Colony', 'Dewas', 'Madhya Pradesh', '455001', null, null, null, 'On call, by prior appointment', 'https://www.practo.com/dewas/doctor/dr-tariq-ahmed-shaikh-general-physician', '2026-11-14'::date, 'Practo public doctor profile. Registration number is as shown there and NOT yet checked against the council register. Practo hides the phone behind a button, so phone is N/A: get it from the clinic. Experience is as stated on the date checked. Also listed at District Hospital Dewas and a Mumbai practice; the Dewas clinic shown is First Choice Clinic.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Tariq Ahmed Shaikh')
-    and lower(coalesce(p.address, '')) = lower(coalesce('143 Karmachari Colony', ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Rajkumar Soni', null, (select id from public.specialties where slug = 'homeopathy'), 'BHMS', 16, '18066', 'State Council of Homoeopathy, Madhya Pradesh', 'Family Wellness Clinic', '7B Nagar Nigam Market, Station Road, Tekri', 'Tekri', 'Dewas', 'Madhya Pradesh', '455001', null, null, null, 'Mon-Sat 10 am-1 pm, 3-11 pm', 'https://www.practo.com/dewas/doctor/dr-rajkumar-soni-homoeopath', '2026-11-14'::date, 'Practo public doctor profile. Registration number is as shown there and NOT yet checked against the council register. Practo hides the phone behind a button, so phone is N/A: get it from the clinic. Experience is as stated on the date checked. Source spells the market as "Nagar Ni Market".'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Rajkumar Soni')
-    and lower(coalesce(p.address, '')) = lower(coalesce('7B Nagar Nigam Market, Station Road, Tekri', ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Vandana Choudhary', null, (select id from public.specialties where slug = 'homeopathy'), 'BHMS', 10, '22585', 'State Council of Homoeopathy, Madhya Pradesh', 'Samarthya Homoeo Clinic', '215 MG Road, Sawariya Market, opposite Netram Optics', 'MG Road', 'Dewas', 'Madhya Pradesh', '455001', null, null, null, 'Mon-Sun 11:30 am-3 pm, 5-9 pm', 'https://www.practo.com/dewas/doctor/dr-vandana-choudhary-homoeopath', '2026-11-14'::date, 'Practo public doctor profile. Registration number is as shown there and NOT yet checked against the council register. Practo hides the phone behind a button, so phone is N/A: get it from the clinic. Experience is as stated on the date checked.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Vandana Choudhary')
-    and lower(coalesce(p.address, '')) = lower(coalesce('215 MG Road, Sawariya Market, opposite Netram Optics', ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Lokendra Lodhi', null, (select id from public.specialties where slug = 'dentist'), 'BDS', 5, 'A-11105', 'Madhya Pradesh State Dental Council', 'Samarpan Dental Clinic', '10 MIG, Mukherjee Nagar, Bima Road, Kunawat House', 'Mukherjee Nagar', 'Dewas', 'Madhya Pradesh', '455001', null, null, null, 'Mon-Fri 10:30 am-2 pm, 5-8 pm; Sat 11-2, 5-8; Sun 11-2', 'https://www.practo.com/dewas/doctor/dr-lokendra-lodhi-dentist', '2026-11-14'::date, 'Practo public doctor profile. Registration number is as shown there and NOT yet checked against the council register. Practo hides the phone behind a button, so phone is N/A: get it from the clinic. Experience is as stated on the date checked.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Lokendra Lodhi')
-    and lower(coalesce(p.address, '')) = lower(coalesce('10 MIG, Mukherjee Nagar, Bima Road, Kunawat House', ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Shivcharan Bagela', null, (select id from public.specialties where slug = 'unani'), 'BUMS', 12, '55362', 'Madhya Pradesh Ayurvedic, Unani & Prakritic Chikitsa Board', 'Nikhil Unani Clinic', 'House No. 150, Shree Ram Nagar, Hatpipliya', 'Hatpipliya', 'Dewas', 'Madhya Pradesh', null, null, null, null, null, 'https://www.practo.com/dewas/doctor/093813-unani', '2026-11-14'::date, 'Practo public doctor profile. Registration number is as shown there and NOT yet checked against the council register. Practo hides the phone behind a button, so phone is N/A: get it from the clinic. Experience is as stated on the date checked. Timings shown as "09:00 - 09:00" on the source, so left N/A.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Shivcharan Bagela')
-    and lower(coalesce(p.address, '')) = lower(coalesce('House No. 150, Shree Ram Nagar, Hatpipliya', ''))
 );
 
 insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
@@ -540,94 +356,6 @@ where not exists (
   select 1 from public.providers p where p.type = 'doctor'::public.provider_type
     and lower(p.name) = lower('Dr. Amreen Gajadhar Khan')
     and lower(coalesce(p.address, '')) = lower(coalesce('231, AB Road, opposite Power House, Gomti Nagar', ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Poonam Bhatia', null, (select id from public.specialties where slug = 'pediatrician'), 'MBBS, DCH', 32, null, null, 'Tots 2 Teens Child Guidance Clinic', '8-A Civil Lines Main Road, near Vinayak Hospital', 'Civil Lines', 'Dewas', 'Madhya Pradesh', '455001', null, null, null, null, 'https://kivihealth.com/iam/poonam.bhatia.0ar9ufnxjf6w', '2026-11-14'::date, 'KiViHealth public profile. The phone shown on KiViHealth is the platform''s own booking line, not the clinic, so phone is N/A. No registration number shown. Confirm with the clinic before approving.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Poonam Bhatia')
-    and lower(coalesce(p.address, '')) = lower(coalesce('8-A Civil Lines Main Road, near Vinayak Hospital', ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Pratibha Saxena', null, (select id from public.specialties where slug = 'gynecologist'), 'MBBS', null, null, null, 'Drishti Clinic', '10 HIG, Chamunda Complex, opposite BJP Office', 'Itawa', 'Dewas', 'Madhya Pradesh', '455001', null, null, null, null, 'https://kivihealth.com/iam/dr.pratiba.saxena.30992', '2026-11-14'::date, 'KiViHealth public profile. The phone shown on KiViHealth is the platform''s own booking line, not the clinic, so phone is N/A. No registration number shown. Confirm with the clinic before approving. Name shown as "Dr. Saxena (Pratiba)" on the source; experience shown as 44 years, unconfirmed.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Pratibha Saxena')
-    and lower(coalesce(p.address, '')) = lower(coalesce('10 HIG, Chamunda Complex, opposite BJP Office', ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Vinay Sharma', null, (select id from public.specialties where slug = 'dentist'), 'BDS', 4, null, null, 'Smile Dental Clinic', '5 Ram Nagar, Monica Complex, Ram Nagar Chauraha, AB Road', 'Ram Nagar', 'Dewas', 'Madhya Pradesh', '455001', null, null, null, null, 'https://kivihealth.com/iam/dr.vinay.sharma.30662', '2026-11-14'::date, 'KiViHealth public profile. The phone shown on KiViHealth is the platform''s own booking line, not the clinic, so phone is N/A. No registration number shown. Confirm with the clinic before approving.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Vinay Sharma')
-    and lower(coalesce(p.address, '')) = lower(coalesce('5 Ram Nagar, Monica Complex, Ram Nagar Chauraha, AB Road', ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Arun Parmar', null, (select id from public.specialties where slug = 'dentist'), 'BDS', 4, null, null, 'Aapka Dentist', 'Bhopal Square, near Muthoot Finance', 'Bhopal Square', 'Dewas', 'Madhya Pradesh', '455001', null, null, null, null, 'https://kivihealth.com/iam/arun.parmar.30440', '2026-11-14'::date, 'KiViHealth public profile. The phone shown on KiViHealth is the platform''s own booking line, not the clinic, so phone is N/A. No registration number shown. Confirm with the clinic before approving.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Arun Parmar')
-    and lower(coalesce(p.address, '')) = lower(coalesce('Bhopal Square, near Muthoot Finance', ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Ankit Agrawal', null, (select id from public.specialties where slug = 'dentist'), null, null, null, null, 'Dewas Multi-speciality Dental Clinic', '12 Agroha Nagar, behind Sheeba Hotel', 'Agroha Nagar', 'Dewas', 'Madhya Pradesh', '455001', null, null, null, null, 'https://kivihealth.com/iam/ankit.agrawal.3620', '2026-11-14'::date, 'KiViHealth public profile. The phone shown on KiViHealth is the platform''s own booking line, not the clinic, so phone is N/A. No registration number shown. Confirm with the clinic before approving. Qualification shown only as "Dental Surgeon".'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Ankit Agrawal')
-    and lower(coalesce(p.address, '')) = lower(coalesce('12 Agroha Nagar, behind Sheeba Hotel', ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Chetan Chouhan', null, (select id from public.specialties where slug = 'ayurveda'), null, null, null, null, 'Niramaya Panchkarma Clinic', 'Ganj-Bhang Chouraha, near Kanchan Jewellers', 'Ganj', 'Dewas', 'Madhya Pradesh', '455001', null, null, null, null, 'https://kivihealth.com/iam/dr.chetan.chouhan.30981', '2026-11-14'::date, 'KiViHealth public profile. The phone shown on KiViHealth is the platform''s own booking line, not the clinic, so phone is N/A. No registration number shown. Confirm with the clinic before approving.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Chetan Chouhan')
-    and lower(coalesce(p.address, '')) = lower(coalesce('Ganj-Bhang Chouraha, near Kanchan Jewellers', ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Rahil Shaikh', null, (select id from public.specialties where slug = 'homeopathy'), null, null, null, null, 'Infinity Clinic', '38/1 Bada Bazar', 'Bada Bazar', 'Dewas', 'Madhya Pradesh', '455001', null, null, null, null, 'https://kivihealth.com/iam/rahil.shaikh.s7xu4sqnmxye', '2026-11-14'::date, 'KiViHealth public profile. The phone shown on KiViHealth is the platform''s own booking line, not the clinic, so phone is N/A. No registration number shown. Confirm with the clinic before approving. A second KiViHealth profile lists the same doctor as a dermatologist; confirm.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Rahil Shaikh')
-    and lower(coalesce(p.address, '')) = lower(coalesce('38/1 Bada Bazar', ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'doctor'::public.provider_type, 'draft'::public.listing_status, 'Dr. Gopal Binnani', null, (select id from public.specialties where slug = 'general-physician'), null, null, null, null, 'Binnani Clinic', null, null, 'Dewas', 'Madhya Pradesh', '455001', null, null, null, null, 'https://www.eka.care/doctor/dr-gopal-binnani-general_physician-dewas', '2026-11-14'::date, 'Eka Care public profile with name, specialty and clinic only. Everything else must come from the clinic.'
-where not exists (
-  select 1 from public.providers p where p.type = 'doctor'::public.provider_type
-    and lower(p.name) = lower('Dr. Gopal Binnani')
-    and lower(coalesce(p.address, '')) = lower(coalesce(null, ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'lab'::public.provider_type, 'draft'::public.listing_status, 'Sodani Diagnostics - Dewas', null, null, null, null, null, null, null, '46-B, Laxmi Bagh, Moti Bungla', 'Moti Bunglow', 'Dewas', 'Madhya Pradesh', '455001', null, null, null, null, 'https://www.bajajfinservhealth.in/lab-tests/dewas/diagnostic-centers', '2026-11-14'::date, 'LOW CONFIDENCE: from a truncated search snippet of an aggregator page; address incomplete and phone not clearly tied to this branch, so left N/A. Confirm with Sodani before approving.'
-where not exists (
-  select 1 from public.providers p where p.type = 'lab'::public.provider_type
-    and lower(p.name) = lower('Sodani Diagnostics - Dewas')
-    and lower(coalesce(p.address, '')) = lower(coalesce('46-B, Laxmi Bagh, Moti Bungla', ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'lab'::public.provider_type, 'draft'::public.listing_status, 'Thyrocare Aarogyam Centre - Dewas', null, null, null, null, null, null, null, '13, Chamunda Complex, AB Road', 'Chamunda Complex', 'Dewas', 'Madhya Pradesh', '455001', null, null, 'https://www.thyrocare.com/', null, 'https://www.dewasonline.in/guide/pathology-labs-in-dewas', '2026-11-14'::date, 'LOW CONFIDENCE: from a search snippet of a local directory page. Confirm on Thyrocare''s own centre locator and by phone before approving. 2026-11-14: a further search found no Thyrocare-operated centre in Dewas (only home-collection bookings via aggregators). Consider archiving unless confirmed.'
-where not exists (
-  select 1 from public.providers p where p.type = 'lab'::public.provider_type
-    and lower(p.name) = lower('Thyrocare Aarogyam Centre - Dewas')
-    and lower(coalesce(p.address, '')) = lower(coalesce('13, Chamunda Complex, AB Road', ''))
-);
-
-insert into public.providers (type, status, name, name_hi, specialty_id, qualifications, experience_years, registration_number, registration_council, clinic_name, address, area, city, state, pincode, phone, maps_url, website_url, timings, source_url, source_checked_on, source_notes)
-select 'pharmacy'::public.provider_type, 'draft'::public.listing_status, 'Pradhan Mantri Jan Aushadhi Kendra - Amaltas Campus', null, null, null, null, null, null, null, 'Amaltas Campus, Dewas-Ujjain Highway, Bangar', 'Bangar', 'Dewas', 'Madhya Pradesh', '455001', null, null, null, null, 'https://www.genericdrugscan.com/jan-aushadhi-stores/madhya-pradesh/dewas', '2026-11-14'::date, 'Third-party directory lists this as store code PMBJK06355. Confirm on the official locator (janaushadhi.gov.in/locate-kendra) and by phone before approving.'
-where not exists (
-  select 1 from public.providers p where p.type = 'pharmacy'::public.provider_type
-    and lower(p.name) = lower('Pradhan Mantri Jan Aushadhi Kendra - Amaltas Campus')
-    and lower(coalesce(p.address, '')) = lower(coalesce('Amaltas Campus, Dewas-Ujjain Highway, Bangar', ''))
 );
 
 commit;
