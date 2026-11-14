@@ -7,6 +7,10 @@ export const DEFAULT_SETTINGS = {
   contact_email: '',
   adsense_enabled: false,
   adsense_client: '',
+  delivery_enabled: false,
+  delivery_shop_name: '',
+  delivery_shop_phone: '',
+  delivery_shop_address: '',
 };
 
 const SettingsContext = createContext({ settings: DEFAULT_SETTINGS, reload: () => {} });

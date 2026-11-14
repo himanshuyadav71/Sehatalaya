@@ -33,6 +33,7 @@ export default function Layout() {
     ['/doctors', t('nav.doctors')],
     ['/labs', t('nav.labs')],
     ['/pharmacies', t('nav.pharmacies')],
+    ['/order', t('nav.order')],
     ['/about', t('nav.about')],
   ];
 
@@ -110,6 +111,8 @@ export default function Layout() {
             <Link to="/doctors">{t('nav.doctors')}</Link>
             <Link to="/labs">{t('nav.labs')}</Link>
             <Link to="/pharmacies">{t('nav.pharmacies')}</Link>
+            <Link to="/order">{t('nav.order')}</Link>
+            <Link to="/track">{t('nav.track')}</Link>
             <Link to="/about">{t('nav.about')}</Link>
           </nav>
         </div>

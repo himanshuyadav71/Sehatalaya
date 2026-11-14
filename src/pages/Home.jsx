@@ -17,6 +17,7 @@ export default function Home() {
     { to: '/doctors', icon: '🩺', title: t('nav.doctors'), desc: t('home.doctorsDesc') },
     { to: '/labs', icon: '🔬', title: t('nav.labs'), desc: t('home.labsDesc') },
     { to: '/pharmacies', icon: '💊', title: t('nav.pharmacies'), desc: t('home.pharmaciesDesc') },
+    { to: '/order', icon: '🛵', title: t('nav.order'), desc: t('home.orderDesc') },
   ];
 
   return (
