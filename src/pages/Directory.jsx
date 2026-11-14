@@ -5,6 +5,7 @@ import Pagination from '../components/Pagination.jsx';
 import ProviderCard from '../components/ProviderCard.jsx';
 import { ORGANS, PAGE_SIZE } from '../lib/constants.js';
 import { useLang } from '../lib/i18n.jsx';
+import { useSettings } from '../lib/settings.jsx';
 import { supabase } from '../lib/supabase.js';
 import { sanitizeSearch } from '../lib/utils.js';
 
@@ -25,6 +26,8 @@ const SORTS = {
 export default function Directory({ type }) {
   const { t, pick, lang } = useLang();
   const [params, setParams] = useSearchParams();
+  const { settings } = useSettings();
+  const contactEmail = String(settings.contact_email || '').trim();
   const isDoctor = type === 'doctor';
 
   const q = params.get('q') || '';
@@ -260,6 +263,11 @@ export default function Directory({ type }) {
           <div className="empty card">
             <h2>{t(hasFilters ? 'dir.emptyFiltered.title' : 'dir.empty.title')}</h2>
             <p className="muted">{t(hasFilters ? 'dir.emptyFiltered.body' : 'dir.empty.body')}</p>
+            {contactEmail ? (
+              <p className="small">
+                {t('cta.list')} <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+              </p>
+            ) : null}
           </div>
         ) : (
           <>

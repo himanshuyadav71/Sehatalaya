@@ -27,6 +27,7 @@ export default function Layout() {
   }, [location.pathname]);
 
   const announcement = pick(settings.announcement_en, settings.announcement_hi);
+  const contactEmail = String(settings.contact_email || '').trim();
   const links = [
     ['/', t('nav.home')],
     ['/doctors', t('nav.doctors')],
@@ -98,6 +99,12 @@ export default function Layout() {
           </div>
           <p className="footer-note">
             {t('footer.disclaimer')} {t('footer.free')}
+            {contactEmail ? (
+              <>
+                <br />
+                {t('cta.list')} <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+              </>
+            ) : null}
           </p>
           <nav className="footer-links" aria-label="Footer">
             <Link to="/doctors">{t('nav.doctors')}</Link>
